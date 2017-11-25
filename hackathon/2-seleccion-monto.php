@@ -22,7 +22,6 @@
 
             function SetMontoTrx(montoTrx) {
                 document.getElementById('montoTrx').value = montoTrx;
-
                 document.forms[0].submit();
             }
 
@@ -36,7 +35,6 @@
     $numeroDocumento = $_POST['numeroDocumento1'] . $_POST['numeroDocumento2'] . $_POST['numeroDocumento3'] . $_POST['numeroDocumento4'] . $_POST['numeroDocumento5'] . $_POST['numeroDocumento6'] . $_POST['numeroDocumento7'] . $_POST['numeroDocumento8'];
     session_start();
     $_SESSION['numeroDocumento'] = $numeroDocumento;
-    echo $_SESSION['numeroDocumento'] . "<br/>";
     ?>
 
     <body class="touch seleccion-principal" ontouchstart="" onload="">
@@ -64,7 +62,6 @@
                         </div>
                     </header>
                     <!-- /header -->
-
 
                     <section>
                         <div class="menu-navegacion wancho-2 ">
@@ -134,10 +131,10 @@
                                     </div>
                                     <div class="content-wrapper content-tab">
                                         <div id="tab-soles" class="content-billete soles item-tab active">
-                                            <input type="hidden" value="100" id="monto100" name="monto100"/>
-                                            <a href="#" class="bt ac b-ss" onclick="javascript:SetMontoTrx(document.getElementById('monto100').value);">
+                                            <input type="hidden" value="20" id="monto20" name="monto20"/>
+                                            <a href="#" class="bt ac b-ss" onclick="javascript:SetMontoTrx(document.getElementById('monto20').value);">
                                                 <div class="bt-inner">
-                                                    S/ &nbsp; 100                                                
+                                                    S/ &nbsp; 20                                                
                                                 </div>
                                             </a>
                                             <input type="hidden" value="50" id="monto50" name="monto50"/>
@@ -175,32 +172,38 @@
                                             </a>
                                         </div>
                                         <div id="tab-dolares" class="content-billete dolares item-tab">
-                                            <a href="2002-seleccion-cuentas-dolar.html" class="bt ac b-ss">
+                                            <input type="hidden" value="20" id="monto20" name="monto20"/>
+                                            <a href="#" class="bt ac b-ss" onclick="javascript:SetMontoTrx(document.getElementById('monto20').value);">
                                                 <div class="bt-inner">
-                                                    US$ &nbsp; 20
+                                                    US$ &nbsp; 20                                                
                                                 </div>
                                             </a>
-                                            <a href="" class="bt ac b-ss">
+                                            <input type="hidden" value="40" id="monto40" name="monto40"/>
+                                            <a href="#" class="bt ac b-ss" onclick="javascript:SetMontoTrx(document.getElementById('monto40').value);">
                                                 <div class="bt-inner">
-                                                    US$ &nbsp; 40
+                                                    US$ &nbsp; 40                                                
                                                 </div>
                                             </a>
-                                            <a href="" class="bt ac b-ss">
+                                            <input type="hidden" value="80" id="monto80" name="monto80"/>
+                                            <a href="#" class="bt ac b-ss" onclick="javascript:SetMontoTrx(document.getElementById('monto80').value);">
                                                 <div class="bt-inner">
-                                                    US$ &nbsp; 80
+                                                    US$ &nbsp; 80                                            
                                                 </div>
                                             </a>
-                                            <a href="" class="bt ac b-ss">
+                                            <input type="hidden" value="100" id="monto100" name="monto100"/>
+                                            <a href="#" class="bt ac b-ss" onclick="javascript:SetMontoTrx(document.getElementById('monto100').value);">
                                                 <div class="bt-inner">
                                                     US$ &nbsp; 100
                                                 </div>
                                             </a>
-                                            <a href="" class="bt ac b-ss">
+                                            <input type="hidden" value="140" id="monto140" name="monto140"/>
+                                            <a href="#" class="bt ac b-ss" onclick="javascript:SetMontoTrx(document.getElementById('monto140').value);">
                                                 <div class="bt-inner">
                                                     US$ &nbsp; 140
                                                 </div>
                                             </a>
-                                            <a href="" class="bt ac b-ss">
+                                            <input type="hidden" value="200" id="monto200" name="monto200"/>
+                                            <a href="#" class="bt ac b-ss" onclick="javascript:SetMontoTrx(document.getElementById('monto200').value);">
                                                 <div class="bt-inner">
                                                     US$ &nbsp; 200
                                                 </div>
