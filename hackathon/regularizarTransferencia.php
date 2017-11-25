@@ -10,8 +10,8 @@
         include 'model/jsonPOST.php';
         include 'model/jsonGET.php';
         include 'model/util.php';
-
-        $objCliente = ObtenerCodigoUnicoClientePorNumeroDocumento($_POST["numeroDocumento"], "https://api.us.apiconnect.ibmcloud.com/interbankperu-uat/pys-servicios-internos/ms/clientes");
+        
+        $objCliente = ObtenerCodigoUnicoClientePorNumeroDocumento($numeroDocumento, "https://api.us.apiconnect.ibmcloud.com/interbankperu-uat/pys-servicios-internos/ms/clientes");
         $objReclamo = ObtenerReclamoPorCodigoUnicoCliente($objCliente->codigoUnicoCliente);
 
         if (ValidarFechaReclamos($objReclamo) == "No") {
@@ -29,7 +29,6 @@
 
         <form>
             <h1>R20 detectado</h1>
-
             <h2>Transferencia regularizada a la cuenta: <?php echo $objCuenta[0]->numeroCuenta; ?></h2>
             <h2>Monto <?php echo $_POST["montoTrx"]; ?> y Moneda <?php echo $_POST["monedaTrx"]; ?></h2>
             <h2>Fecha y Hora: <?php echo date('Y-m-d'); ?></h2>
