@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'DaxOT-BoldItalic';
+  src: url("../fonts/DaxOT-BoldItalic.eot");
+  src: url("../fonts/DaxOT-BoldItalic.eot?#iefix") format('embedded-opentype'), url("../fonts/DaxOT-BoldItalic.woff2") format('woff2'), url("../fonts/DaxOT-BoldItalic.woff") format('woff'), url("../fonts/DaxOT-BoldItalic.ttf") format('truetype'), url("../fonts/DaxOT-BoldItalic.svg#DaxOT-BoldItalic") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Dax-Bold';
+  src: url("../fonts/Dax-Bold.eot");
+  src: url("../fonts/Dax-Bold.eot?#iefix") format('embedded-opentype'), url("../fonts/Dax-Bold.woff2") format('woff2'), url("../fonts/Dax-Bold.woff") format('woff'), url("../fonts/Dax-Bold.ttf") format('truetype'), url("../fonts/Dax-Bold.svg#Dax-Bold") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

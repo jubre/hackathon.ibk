@@ -1,0 +1,43 @@
+/* BASE */
+html,body{
+	height:auto;
+	overflow: none;
+}
+.cnt-wrapper{
+	min-height: 0;
+}
+.wrapper{
+	padding-bottom:0;
+	overflow:none;
+}
+.footer{
+	position: static;
+	margin-top:0;
+	clear:none;
+}
+/* FIN-BASE */
+
+
+.titulo-text, .page-parrafo .parrafo-pregunta, .main-form .item-input .input-box,
+.page-parrafo-sugerencia, .page-listado .item-list .list-text, 
+.page-listado .item-list .list-nro,.page-parrafo .parrafo-text,
+.opciones-item-basico .texto-opcion
+{
+
+	text-shadow :  0 3px 3px #ffff00;
+	filter: 
+		progid:DXImageTransform.Microsoft.dropshadow(color=#ffff00,offX=1,offY=1) 
+		progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=90, Color='#666666')
+		;
+}
+/* BOTONES TOUCH */
+
+.opciones-item-touch .inner-opcion .texto-opcion, 
+	.sombra-btn .texto-opcion, .sombra-btn-blue .texto-opcion{
+	text-shadow :  0 3px 3px #ffff00;
+
+	filter: 
+		progid:DXImageTransform.Microsoft.dropshadow(color=#000000,offX=1,offY=1) 
+		progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=90, Color='#000000')
+		;	
+}

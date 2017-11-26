@@ -1,0 +1,108 @@
+.s-consultas {
+  padding-bottom: 20px;
+}
+.s-consultas .consulta-movimientos .saldo-disponible {
+  width: 26.3671875%;
+  float: left;
+  background-color: gris-bg;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  text-align: right;
+}
+.s-consultas .consulta-movimientos .saldo-disponible .inner-saldo {
+  text-align: left;
+  margin-right: 40px;
+}
+.s-consultas .consulta-movimientos .saldo-disponible .inner-saldo .title-ahorro {
+  color: #7f7f7f;
+  font-size: 22px;
+}
+.s-consultas .consulta-movimientos .saldo-disponible .inner-saldo .title-saldo {
+  color: #7f7f7f;
+  font-size: 15px;
+  font-family: omnes-med;
+}
+.s-consultas .consulta-movimientos .saldo-disponible .inner-saldo .importe-ahorro {
+  font-size: 27px;
+  color: #4d4d4d;
+}
+.s-consultas .consulta-movimientos .lista-movimientos {
+  width: 59.765625%;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  float: left;
+  background-color: gris-bg;
+  min-height: 230px;
+  font-size: 18px;
+  color: #7f7f7f;
+  border-radius: 0px 10px 10px 10px;
+  behavior: url("static/css/PIE.htc");
+}
+.s-consultas .consulta-movimientos .lista-movimientos table {
+  margin: 0;
+  margin-left: 30px;
+  text-align: left;
+}
+.s-consultas .consulta-movimientos .lista-movimientos table th {
+  color: #5c5c5c;
+  font-size: 18px;
+  font-family: omnes-med;
+  width: 160px;
+}
+.s-consultas .consulta-movimientos .lista-movimientos table td,
+.s-consultas .consulta-movimientos .lista-movimientos table th {
+  width: 160px;
+  padding-bottom: 25px;
+}
+.s-consultas .consulta-movimientos .lista-movimientos table td:first-child,
+.s-consultas .consulta-movimientos .lista-movimientos table th:first-child {
+  width: 230px;
+}
+.s-consultas .consulta-movimientos .lista-movimientos table .mov-monto {
+  color: rojo-tex;
+}
+.s-consultas .consulta-movimientos .lista-movimientos table .color-azul {
+  color: azul-tex;
+}
+.s-consultas .consulta-head .saldo-disponible,
+.s-consultas .consulta-head .lista-movimientos {
+  min-height: 0;
+  background: none;
+}
+.s-consultas .consulta-head .lista-movimientos {
+  padding-bottom: 0;
+}
+.s-consultas .consulta-head .lista-movimientos table th {
+  padding-bottom: 20px;
+}
+.s-consultas .consulta-controles {
+  margin-top: 45px;
+}
+.s-consultas .consulta-controles .botones-left {
+  float: left;
+  width: 200px;
+}
+.s-consultas .consulta-controles .botones-right {
+  float: right;
+}
+.s-consultas .consulta-controles .botones-right .btn-imprimir .btn-action .ico-x {
+  background: url("../images/icon-printer.png") no-repeat;
+  width: 30px;
+  height: 23px;
+  left: 4px;
+}
+.s-consultas .consulta-controles .botones-right .btn-imprimir .btn-action .bt-text {
+  padding-left: 35px;
+}
+.s-consultas .consulta-controles .botones-right .btn-solicitar .btn-action {
+  width: 370px;
+}
+.s-consultas .consulta-controles .botones-right .btn-solicitar .btn-action .ico-x {
+  background: url("../images/icon-clave.png") no-repeat;
+  width: 47px;
+  height: 33px;
+  left: 8px;
+}
+.s-consultas .consulta-controles .botones-right .btn-solicitar .btn-action .bt-text {
+  padding-left: 63px;
+}

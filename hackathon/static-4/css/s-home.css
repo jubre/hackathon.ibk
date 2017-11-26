@@ -1,0 +1,12 @@
+.page-home .block {
+  text-align: center;
+}
+.page-home .block2 {
+  text-align: left;
+}
+.page-home .block2 .block2-list {
+  padding-left: 1.5em;
+}
+.page-home .block2 .block2-list li {
+  list-style-type: disc;
+}

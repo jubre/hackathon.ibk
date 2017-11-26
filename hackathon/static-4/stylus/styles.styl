@@ -1,0 +1,52 @@
+@import 'nib'
+@import 'fonts'
+@import 'ico'
+@import 'normalize'
+
+// Colors
+negro = black
+
+// Fonts
+icomoon = 'icomoon'
+t-bold = ''
+t-normal = ''
+
+// Mixins
+cf()
+  zoom 1
+  &:after
+  &:before
+    content ""
+    display table
+  &:after
+    clear both
+    
+placeholder(color)
+	::-webkit-input-placeholder { color: color; } /* WebKit */
+	:-moz-placeholder { color: color; } /* Firefox 18- */
+	::-moz-placeholder { color: color; } /* Firefox 19+ */
+	:-ms-input-placeholder { color: color; } /* IE 10+ */
+
+// General
+.wancho
+	width 94%
+	max-width 960px
+	margin auto
+.wancho-2
+	max-width 1024px
+	margin auto
+	
+body
+	color black
+	font-size 16px
+a
+	color inherit
+	&:focus
+		outline none
+
+@import 'general'
+@import 'main'
+@import 'header-footer'
+
+// IMPORT STYLES OF ALL PAGES
+

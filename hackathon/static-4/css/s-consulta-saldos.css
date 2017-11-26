@@ -1,0 +1,33 @@
+.consulta-saldos .s-main .s-conte {
+  max-width: 550px;
+  background: #f4f4f4;
+  border-radius: 10px;
+  behavior: url("static/css/PIE.htc");
+  padding-top: 20px;
+  margin: auto;
+}
+.consulta-saldos .s-main .s-conte .s-item table {
+  width: 440px;
+  text-align: left;
+}
+.consulta-saldos .s-main .s-conte .s-item table thead tr th {
+  color: #5c5c5c;
+  font-family: Omnes-Medium;
+  font-size: 22px;
+  text-align: right;
+  padding-bottom: 20px;
+}
+.consulta-saldos .s-main .s-conte .s-item table thead tr th:first-child {
+  width: 300px;
+  text-align: left;
+}
+.consulta-saldos .s-main .s-conte .s-item table tbody tr td {
+  color: #7f7f7f;
+  font-size: 18px;
+  text-align: right;
+  padding-bottom: 20px;
+}
+.consulta-saldos .s-main .s-conte .s-item table tbody tr td:first-child {
+  width: 300px;
+  text-align: left;
+}
