@@ -2,7 +2,7 @@
 
 //LOGICA POST API IBK
 
-function CrearCliente($numeroDocumento) {
+function RegistrarCliente($numeroDocumento) {
     $curl = curl_init();
 
     curl_setopt_array($curl, array(
@@ -101,19 +101,21 @@ function RegistrarReclamo($codigoUnicoCliente, $descripcionReclamo, $estsadoRecl
     return $objReclamo;
 }
 
-function ObtenerReclamoPorCodigoUnicoCliente($codigoUnicoCliente) {
+function RegistrarCuenta($codigoUnicoCliente) {
     $curl = curl_init();
 
     curl_setopt_array($curl, array(
-        CURLOPT_URL => "https://api.us.apiconnect.ibmcloud.com/interbankperu-uat/pys-servicios-internos/ms/clientes/" . $codigoUnicoCliente . "/reclamos",
+        CURLOPT_URL => "https://api.us.apiconnect.ibmcloud.com/interbankperu-uat/pys-servicios-internos/ms/cuentas",
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => "",
         CURLOPT_MAXREDIRS => 10,
         CURLOPT_TIMEOUT => 30,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        CURLOPT_CUSTOMREQUEST => "GET",
+        CURLOPT_CUSTOMREQUEST => "POST",
+        CURLOPT_POSTFIELDS => "{\"codigoUnicoCliente\":\"".$codigoUnicoCliente."\",\"producto\":\"002\",\"sProducto\":\"205\",\"moneda\":\"001\",\"tasaAnual\":\"110.87\"}",
         CURLOPT_HTTPHEADER => array(
             "accept: application/json",
+            "content-type: application/json",
             "x-ibm-client-id: 1387b541-cb35-4511-940a-3a095567b7a3"
         ),
     ));
@@ -126,10 +128,10 @@ function ObtenerReclamoPorCodigoUnicoCliente($codigoUnicoCliente) {
     if ($err) {
         echo "cURL Error #:" . $err;
     } else {
-        $objReclamo = json_decode($response);
+        $objCuenta = json_decode($response);
     }
 
-    return $objReclamo;
+    return $objCuenta;
 }
 
 ?>
