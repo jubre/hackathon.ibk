@@ -1,3 +1,9 @@
+<?php
+session_start();
+$_SESSION['montoTrx'] = $_POST["montoTrx"];
+$_SESSION['monedaTrx'] = $_POST["monedaTrx"];
+?>
+
 ﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     <head>
@@ -17,7 +23,7 @@
     </head>
 
     <body class="touch seleccion-principal" ontouchstart="">
-        <form action="5-procesando-operacion.php" method="post">
+        <form action="4-ingreso-clave.php" method="post">
             <!-- html solo para el menu responsive -->
             <div class="w-nav">
                 <div  class="menu-mobile icon-menu"></div>
@@ -90,9 +96,9 @@
                                 </p>
                             </div>
                             <div class="j-page-text">
-                                <p>
+                                <!--<p>
                                     <strong>Monto a retirar:</strong> S/  80
-                                </p>
+                                </p>-->
                             </div>
                         </div>
 

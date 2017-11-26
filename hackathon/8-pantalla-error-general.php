@@ -5,22 +5,22 @@ include 'model/jsonPOST.php';
 include 'model/jsonGET.php';
 include 'model/util.php';
 
-$objCliente = ObtenerCodigoUnicoClientePorNumeroDocumento($_SESSION["numeroDocumento"], "https://api.us.apiconnect.ibmcloud.com/interbankperu-uat/pys-servicios-internos/ms/clientes");
-$objClienteTotal = ObtenerClientePorCodigoUnicoCliente($objCliente->codigoUnicoCliente);
-$objReclamo = ObtenerReclamoPorCodigoUnicoCliente($objCliente->codigoUnicoCliente);
+$codigoUnicoCliente = "00".$_SESSION["numeroDocumento"];
+$objClienteTotal = ObtenerClientePorCodigoUnicoCliente($codigoUnicoCliente);
+$objReclamo = ObtenerReclamoPorCodigoUnicoCliente($codigoUnicoCliente);
 
 if (ValidarFechaReclamos($objReclamo) == "No") {
     if ($_SESSION["montoTrx"] >= 1500) {
-        $objReclamo = RegistrarReclamo($objCliente->codigoUnicoCliente, GenerarDescripcionReclamo("IB000999", $_SESSION['montoTrx'], $_SESSION['monedaTrx'], "4546", "E1"), "PENDIENTE");
+        $objReclamo = RegistrarReclamo($codigoUnicoCliente, GenerarDescripcionReclamo("IB000999", $_SESSION['montoTrx'], $_SESSION['monedaTrx'], "4546", "E1"), "PENDIENTE");
         $escenario = 1;
     } else {
-        $objCuenta = ObtenerCuenta("https://api.us.apiconnect.ibmcloud.com/interbankperu-uat/pys-servicios-internos/ms/clientes/" . $objCliente->codigoUnicoCliente . "/cuentas");
+        $objCuenta = ObtenerCuenta("https://api.us.apiconnect.ibmcloud.com/interbankperu-uat/pys-servicios-internos/ms/clientes/" . $codigoUnicoCliente . "/cuentas");
         $objTransferencia = EjecutarTransferenciaRetencion($_SESSION["monedaTrx"], $_SESSION["montoTrx"], $objCuenta[0]->numeroCuenta, "TRANSFERENCIA POR R20");
-        $objReclamo = RegistrarReclamo($objCliente->codigoUnicoCliente, GenerarDescripcionReclamo("IB000999", $_SESSION['montoTrx'], $_SESSION['monedaTrx'], "4546", "E1"), "ATENDIDO");
+        $objReclamo = RegistrarReclamo($codigoUnicoCliente, GenerarDescripcionReclamo("IB000999", $_SESSION['montoTrx'], $_SESSION['monedaTrx'], "4546", "E1"), "ATENDIDO");
         $escenario = 2;
     }
 } else {
-    $objReclamo = RegistrarReclamo($objCliente->codigoUnicoCliente, GenerarDescripcionReclamo("IB000999", $_SESSION['montoTrx'], $_SESSION['monedaTrx'], "4546", "E1"), "PENDIENTE");
+    $objReclamo = RegistrarReclamo($codigoUnicoCliente, GenerarDescripcionReclamo("IB000999", $_SESSION['montoTrx'], $_SESSION['monedaTrx'], "4546", "E1"), "PENDIENTE");
     $escenario = 3;
 }
 ?>
@@ -81,7 +81,7 @@ if (ValidarFechaReclamos($objReclamo) == "No") {
                                 $mensaje = "Hola " . $objClienteTotal->primerNombre . "Lo sentimos, tuvimos problemas en atender el retiro soliciado. Para evitar cualquier malestar, se procedio con la devolución de " . $_SESSION["montoTrx"] . " " . $_SESSION["monedaTrx"] . " a su cuenta " . $objCuenta[0]->numeroCuenta . ". Disculpe el inconveniente. Estamos para servirte";
                                 ?>
                                 Hola <strong><?php echo $objClienteTotal->primerNombre; ?></strong><br/>
-                                Lo sentimos, tuvimos problemas en atender el retiro soliciado.<br/>
+                                Lo sentimos, tuvimos problemas en atender el retiro solicitado.<br/>
                                 Para evitar cualquier malestar, se procedio con la devolución de <br/>
                                 <?php echo $_SESSION["montoTrx"] . " " . $_SESSION["monedaTrx"] . " a su cuenta " . $objCuenta[0]->numeroCuenta; ?><br/>
                                 Disculpe el inconveniente.<br/>

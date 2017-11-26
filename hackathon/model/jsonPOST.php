@@ -1,17 +1,19 @@
 <?php
 
 //LOGICA POST API IBK
-function ObtenerCodigoUnicoClientePorNumeroDocumento($numeroDocumento, $url) {
+
+function CrearCliente($numeroDocumento) {
     $curl = curl_init();
+
     curl_setopt_array($curl, array(
-        CURLOPT_URL => $url,
+        CURLOPT_URL => "https://api.us.apiconnect.ibmcloud.com/interbankperu-uat/pys-servicios-internos/ms/clientes",
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => "",
         CURLOPT_MAXREDIRS => 10,
         CURLOPT_TIMEOUT => 30,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => "POST",
-        CURLOPT_POSTFIELDS => "{\"numeroDocumento\":\"" . $numeroDocumento . "\"}",
+        CURLOPT_POSTFIELDS => "{\"tipoDocumento\":\"1\",\"numeroDocumento\":\"" . $numeroDocumento . "\",\"fechaNacimiento\":\"1980-01-01\",\"apellidoPaterno\":\"CARDENAS\",\"apellidoMaterno\":\"MENDIOLA\",\"primerNombre\":\"LORENZO\",\"segundoNombre\":\"JEREMIAS\",\"sexo\":\"M\",\"estadoCivil\":\"U\",\"tipoNacionalidad\":\"0\",\"codigoPaisNacimiento\":\"4028\",\"codigoPaisResidencia\":\"4028\",\"codigoPaisNacionalidad\":\"4028\",\"tipoVia\":\"av\",\"nombreVia\":\"SAN FRANCISCO\",\"numeroCalle\":\"258\",\"idManzana\":\"A\",\"idLote\":\"8\",\"idInterior\":\"102\",\"nombreUrbanizacion\":\"LOS CONDORES\",\"referenciaUbicacion\":\"AL FRENTE DE HOSPITAL CENTRAL\",\"departamento\":\"LIMA\",\"provincia\":\"LIMA\",\"distrito\":\"AREQUIPA\",\"listaTelefonos\":[],\"tipoEmail\":\"p\",\"email\":\"ejemplo@gmail.com\",\"codigoCIIU\":\"\",\"fechaInicioEmpleo\":\"2015-09-20\",\"nombreEmpresa\":\"TELNET S.A.\",\"codigoOcupacion\":\"EMPLEADO\"}",
         CURLOPT_HTTPHEADER => array(
             "accept: application/json",
             "content-type: application/json",
@@ -103,7 +105,7 @@ function ObtenerReclamoPorCodigoUnicoCliente($codigoUnicoCliente) {
     $curl = curl_init();
 
     curl_setopt_array($curl, array(
-        CURLOPT_URL => "https://api.us.apiconnect.ibmcloud.com/interbankperu-uat/pys-servicios-internos/ms/clientes/".$codigoUnicoCliente."/reclamos",
+        CURLOPT_URL => "https://api.us.apiconnect.ibmcloud.com/interbankperu-uat/pys-servicios-internos/ms/clientes/" . $codigoUnicoCliente . "/reclamos",
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => "",
         CURLOPT_MAXREDIRS => 10,

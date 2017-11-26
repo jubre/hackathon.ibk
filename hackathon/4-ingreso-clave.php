@@ -1,9 +1,3 @@
-<?php
-session_start();
-$_SESSION['montoTrx'] = $_POST["montoTrx"];
-$_SESSION['monedaTrx'] = $_POST["monedaTrx"];
-?>
-
 ﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     <head>
@@ -20,10 +14,16 @@ $_SESSION['monedaTrx'] = $_POST["monedaTrx"];
                 <link rel="stylesheet" type="text/css" href="../static/css/ie.css"/>
         <![endif]-->
         <script src="../static/js/jquery1.8.3.min.js" type="text/javascript"></script>
+        
+        <script type="text/javascript">
+            $(window).load(function () {
+                $("#password1").focus();
+            });
+        </script>
     </head>
 
     <body class="touch cambio-clave" ontouchstart="">
-        <form action="4-seleccion-cuentas-soles.php" method="post">
+        <form action="5-procesando-operacion.php" method="post">
             <!-- html solo para el menu responsive -->
             <div class="w-nav">
                 <div  class="menu-mobile icon-menu"></div>
@@ -96,11 +96,11 @@ $_SESSION['monedaTrx'] = $_POST["monedaTrx"];
                                 </ul>
                             </div>
                             <div class="block-button c40 fr">
-                                <a href="4-seleccion-cuentas-soles.php" class="bt ac mb20 fr">
+                                <!--<a href="4-seleccion-cuentas-soles.php" class="bt ac mb20 fr">
                                     <div class="bt-inner">
                                         Confirmar		
                                     </div>
-                                </a>				
+                                </a>-->				
                                 <a href="" class="bt ac fr">
                                     <div class="bt-inner">
                                         Cancelar
