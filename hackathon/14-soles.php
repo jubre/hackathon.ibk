@@ -29,7 +29,7 @@
     </head>
 
     <body class="exito">
-        <form action="15-dni.php" method="post">
+        <form action="20-procesando.php" method="post">
             <input type="hidden" name="montoTrx" id="montoTrx"/>
             <input type="hidden" name="monedaTrx" id="monedaTrx"/>
             <div class="cnt-wrapper">

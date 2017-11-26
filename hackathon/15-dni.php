@@ -1,9 +1,3 @@
-<?php
-session_start();
-$_SESSION['montoTrx'] = $_POST["montoTrx"];
-$_SESSION['monedaTrx'] = $_POST["monedaTrx"];
-?>
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     <head>
