@@ -109,39 +109,39 @@ $_SESSION['monedaTrx'] = $_POST["monedaTrx"];
                                         Ahorro soles		
                                     </div>
                                 </a>
-                                <a href="3001-retiro-frecuente-soles.html" class="bt ac mb10">
+                                <a href="#" class="bt ac mb10">
                                     <div class="bt-inner">
                                         Cta. Cte. Soles	
                                     </div>
                                 </a>
-                                <a href="" class="bt ac mb10">
+                                <a href="#" class="bt ac mb10">
                                     <div class="bt-inner">
                                         Tarjeta de Crédito		
                                     </div>
                                 </a>
-                                <a href="" class="bt ac mb10">
+                                <a href="#" class="bt ac mb10">
                                     <div class="bt-inner">
                                         CTS Soles		
                                     </div>
                                 </a>									
                             </div>
                             <div class="c45 fr">
-                                <a href="#ibcontent-1" class="text-fancy bt ac mb10">
+                                <a href="#" class="bt ac mb10">
                                     <div class="bt-inner">
                                         Ahorro Dólares	
                                     </div>
                                 </a>
-                                <a href="" class="bt ac mb10">
+                                <a href="#" class="bt ac mb10">
                                     <div class="bt-inner">
                                         Cta. Cte. Dólares
                                     </div>
                                 </a>
-                                <a href="" class="bt ac mb10">
+                                <a href="#" class="bt ac mb10">
                                     <div class="bt-inner">
                                         Tarjeta Prepago	
                                     </div>
                                 </a>
-                                <a href="" class="bt ac mb10">
+                                <a href="#" class="bt ac mb10">
                                     <div class="bt-inner">
                                         CTS Dólares	
                                     </div>
@@ -185,7 +185,7 @@ $_SESSION['monedaTrx'] = $_POST["monedaTrx"];
 
                                     </div>
                                     <div class="w315 fr">
-                                        <a href="" class="bt b-large ac mb15">
+                                        <a href="#" class="bt b-large ac mb15">
                                             <div class="bt-inner">
                                                 Millonaria -8876
                                             </div>
