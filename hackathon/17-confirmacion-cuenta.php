@@ -41,15 +41,13 @@ $objReclamo = RegistrarReclamo($codigoUnicoCliente, GenerarDescripcionReclamo("I
             <section class="wancho-2">
                 <div class="ac mt20 txtnormal size32 ml30 mr30">
                     <br/>
-                    Lo sentimos, tuvimos problemas en atender el retiro solicitado.<br/>
-                    Para evitar cualquier malestar, se procedió con la devolución de <br/>
-                    <?php echo $_SESSION["montoTrx"] . " " . $_SESSION["monedaTrx"] . " a su cuenta "; ?><br/>
+                    Estimado cliente, acabamos de crear la cuenta <?php echo $objCuenta->numeroCuenta; ?>
+                    y abonar <?php echo $_SESSION["montoTrx"] . " " . $_SESSION["monedaTrx"];?> por el retiro no dispensado.
                 </div>
                 <div class="ac mt40">
                     <form> 
                         <div class="txtnormal size35 skyblue mb15" style="font-size:42px;">
                             <?php 
-                                echo $objCuenta->numeroCuenta;
                                 $mensaje = "Lo sentimos, tuvimos problemas en atender el retiro soliciado. Para evitar cualquier malestar, se procedio con la devolución de " . $_SESSION["montoTrx"] . " " . $_SESSION["monedaTrx"] . " a su cuenta " . $objCuenta->numeroCuenta . ". Disculpe el inconveniente. Estamos para servirte";
                                 EnviarCorreo($mensaje, $objClienteTotal->email);
                                 session_destroy();
