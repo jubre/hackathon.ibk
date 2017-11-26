@@ -1880,7 +1880,7 @@ h1 {
             border-radius: 10px 0 0 0;
         }
 
-/* Inicio 30102015 : Ajustes al diseño SelectAccount.html */
+/* Inicio 30102015 : Ajustes al diseï¿½o SelectAccount.html */
 .fix .bt.bt-h .borde-before {
     background: #fff url(../images/radius-bt-header.png) no-repeat 0 0;
     border-radius: 0;
@@ -2680,7 +2680,7 @@ h1 {
 
     .text-error.-solo {
         /*font-size: 30px;*/
-        font-size: 32px;
+        font-size: 20px;
         line-height: 35px;
         font-family: 'Omnes-Medium';
     }

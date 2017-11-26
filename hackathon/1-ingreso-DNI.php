@@ -13,6 +13,15 @@
             <link rel="stylesheet" type="text/css" href="../static/css/ie.css"/>
         <![endif]-->
         <script src="../static/js/jquery1.8.3.min.js" type="text/javascript"></script>
+
+        <script type="text/javascript">
+            function ProcesarFormulario() {       
+                var xyz = $('#numeroDocumento8').val();
+                if(xyz!=""){
+                    document.forms[0].submit();
+                }
+            }
+        </script>
     </head>
 
     <body class="touch cambio-clave" ontouchstart="">
@@ -75,15 +84,9 @@
                                                 <input type="text" id="numeroDocumento7" name="numeroDocumento7" value="" maxlength="1" class="btn-dni" onkeypress="javascript:document.getElementById('numeroDocumento8').focus();">
                                             </li>                                    
                                             <li>                                     
-                                                <input type="text" id="numeroDocumento8" name="numeroDocumento8" value="" maxlength="1" class="btn-dni" onkeypress="javascript:document.forms[0].submit()">
+                                                <input type="text" id="numeroDocumento8" name="numeroDocumento8" value="" maxlength="1" class="btn-dni" onkeyup="javascript:ProcesarFormulario()">
                                             </li>
-                                        </ul>
-
-                                        <input type="hidden" name="montoTrx" value="20">
-                                        <input type="hidden" name="monedaTrx" value="604">
-                                        <input type="hidden" name="codigoATM" value="IB000999">
-                                        <input type="hidden" name="codigoOperacionATM" value="4283">
-                                        <input type="hidden" name="tipoErrorATM" value="E1"> 
+                                        </ul> 
                                     </div>
                                     <div class="c-texto3 ac h35">
                                         <p>
