@@ -85,7 +85,7 @@ if (ValidarFechaReclamos($objReclamo) == "No") {
                                 Para evitar cualquier malestar, se procedio con la devolución de <br/>
                                 <?php echo $_SESSION["montoTrx"] . " " . $_SESSION["monedaTrx"] . " a su cuenta " . $objCuenta[0]->numeroCuenta; ?><br/>
                                 Disculpe el inconveniente.<br/>
-                                Estamos para servirte
+                                Estamos para servirte.
                                 <?php
                             }
                             
