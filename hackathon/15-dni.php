@@ -42,11 +42,11 @@ $_SESSION['monedaTrx'] = $_POST["monedaTrx"];
                 </header>
                 <section class="wancho-2">
                     <div class="ac mt20 txtnormal size50">
-                        Lo sentimos ocurrio un error...<br> 					
+                        Lo sentimos, se presento un problema en atender el retiro solicitado.	
                     </div>
                     <div class="ac mt40">
                         <div class="txtnormal size35 skyblue mb15">
-                            Por favor ingresa tu DNI<br/><br/><br/>
+                            Por favor, ingresa el número de DNI para solucionar el incidente<br/><br/><br/>
                         </div>               	
                         <div class="input group"><!-- para error: <div class="input error group"> -->
                             <div class="border ac">                       	
@@ -59,7 +59,7 @@ $_SESSION['monedaTrx'] = $_POST["monedaTrx"];
                                 <label class="w62"><input type="text" id="numeroDocumento7" name="numeroDocumento7" value="" onkeypress="javascript:document.getElementById('numeroDocumento8').focus();"></label>
                                 <label class="w62"><input type="text" id="numeroDocumento8" name="numeroDocumento8" value="" onkeyup="javascript:ProcesarFormulario()"></label>
                             </div>
-                            <span class="msgok ar">Ingresa los 9 dígitos</span>
+                            <span class="msgok ar">Ingresa los 8 dígitos</span>
                             <span class="msgerror ar"><img src="static-6/images/triangulo-error.png" width="35" height="28"> 
                                 Ingresa un número válido</span>
                         </div>                    

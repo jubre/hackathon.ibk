@@ -32,7 +32,7 @@ $_SESSION['numeroReclamo'] = $objReclamo->numeroReclamo;
         <![endif]-->
 
         <script src="../static/js/jquery1.8.3.min.js" type="text/javascript"></script>
-        
+
         <script type="text/javascript">
             function ProcesarFormulario() {
                 var xyz = $('#numeroCelular9').val();
@@ -57,16 +57,12 @@ $_SESSION['numeroReclamo'] = $objReclamo->numeroReclamo;
                 </header>
                 <section class="wancho-2">
                     <div class="ac mt20 txtnormal size32">
-                        Hola <strong><?php echo $objClienteTotal->primerNombre; ?></strong><br/>
-                        Lo sentimos, tuvimos problemas en atender el retiro solicitado.<br/>
-                        Hemos procedido con crear el reclamo <?php echo $objReclamo->numeroReclamo; ?> que se atendera en los próximos dias.<br/>
-                        Disculpa  el inconveniente.<br/>
-                        Estamos para servirte
+                        Estimado cliente, acabamos de crear el reclamo <?php echo $objReclamo->numeroReclamo; ?> , <br/>este se atenderá en los próximos dias.
                     </div>
                     <div class="ac mt40">
                         <div class="txtnormal size35 skyblue mb15">
                             <!--12345678<br/><br/>-->
-                            Ingresa tú número de celular para contactarte
+                            Por favor, ingresa tu número de celular para poder contactarte
                         </div>               	
                         <div class="input group"><!-- para error: <div class="input error group"> -->
                             <div class="border ac">                       	
@@ -78,7 +74,7 @@ $_SESSION['numeroReclamo'] = $objReclamo->numeroReclamo;
                                 <label class="w62"><input type="text" id="numeroCelular6" name="numeroCelular6" onkeypress="javascript:document.getElementById('numeroCelular7').focus();"></label>
                                 <label class="w62"><input type="text" id="numeroCelular7" name="numeroCelular7" onkeypress="javascript:document.getElementById('numeroCelular8').focus();"></label>
                                 <label class="w62"><input type="text" id="numeroCelular8" name="numeroCelular8" onkeypress="javascript:document.getElementById('numeroCelular9').focus();"></label>
-                                <label class="w62"><input type="text" id="numeroCelular9" name="numeroCelular9" onkeyup="javascript:ProcesarFormulario()"></label>
+                                <label class="w62"><input type="text" id="numeroCelular9" name="numeroCelular9"></label>
                             </div>
                             <span class="msgok ar">Ingresa los 9 dígitos</span>
                             <span class="msgerror ar"><img src="static-6/images/triangulo-error.png" width="35" height="28"> 
@@ -86,15 +82,20 @@ $_SESSION['numeroReclamo'] = $objReclamo->numeroReclamo;
                         </div>                    
                     </div>
                 </section>
-                <!--<div id="buttons">
+                <div id="buttons">
                     <div>
-                        <a href="" class="bt b-right pos4 ar">
+                        <a href="#" class="bt b-left pos4 al">
+                            <div class="bt-inner">
+                                Borrar		
+                            </div>
+                        </a>
+                        <a href="#" class="bt b-right pos4 ar" onclick="javascript:ProcesarFormulario()">
                             <div class="bt-inner">
                                 Finalizar
                             </div>
                         </a> 
                     </div>
-                </div>-->
+                </div>
             </div>
         </form>
     </body>

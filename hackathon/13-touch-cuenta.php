@@ -31,25 +31,23 @@
                                     </div>
                                 </div>
                             </a>	
-                            <!--<a href="" class="opciones-item-touch mt20 btn-texto"> 
+                            <a href="#" class="opciones-item-touch mt20 btn-texto"> 
                                 <div class="inner-opcion">
                                     <div class="texto-opcion">
                                         Tarjeta de Crédito
                                     </div>
                                 </div>
-                            </a>-->					
+                            </a>
                         </div>
-                        <!--<div class="c50 fr ar">
-                            <a href="14-soles.php" class="opciones-item-touch otright mt45 btn-texto"> 
+                        <div class="c50 fr ar">
+                            <a href="#" class="opciones-item-touch otright mt45 btn-texto"> 
                                 <div class="inner-opcion">
                                     <div class="texto-opcion">
-                                        Ahorro Soles
+                                        Ahorro Dólares
                                     </div>
                                 </div>
                             </a>	
-
-                        </div>		-->
-
+                        </div>
                     </div>
                 </div> 
             </div>

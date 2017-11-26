@@ -34,7 +34,7 @@
                                     </div>
                                 </div>
                             </a>	
-                            <!--<a href="" class="opciones-item-touch otright mt20 btn-texto"> 
+                            <a href="#" class="opciones-item-touch otright mt20 btn-texto"> 
                                 <div class="inner-opcion">
                                     <div class="texto-opcion">
                                         Consulta de Saldos
@@ -42,13 +42,13 @@
                                 </div>
                             </a>	
 
-                            <a href="" class="opciones-item-touch otright mt20 btn-texto"> 
+                            <a href="#" class="opciones-item-touch otright mt20 btn-texto"> 
                                 <div class="inner-opcion">
                                     <div class="texto-opcion">
                                         Cambio de Clave
                                     </div>
                                 </div>
-                            </a>-->	
+                            </a>
                         </div>		
 
                     </div>
