@@ -15,12 +15,16 @@
         <script src="../static/js/jquery1.8.3.min.js" type="text/javascript"></script>
 
         <script type="text/javascript">
-            function ProcesarFormulario() {       
+            function ProcesarFormulario() {
                 var xyz = $('#numeroDocumento8').val();
-                if(xyz!=""){
+                if (xyz != "") {
                     document.forms[0].submit();
                 }
             }
+
+            $(window).load(function () {
+                $("#numeroDocumento1").focus();
+            });
         </script>
     </head>
 
@@ -88,11 +92,11 @@
                                             </li>
                                         </ul> 
                                     </div>
-                                    <div class="c-texto3 ac h35">
+                                    <!--<div class="c-texto3 ac h35">
                                         <p>
                                             -
                                         </p>
-                                    </div>
+                                    </div>-->
                                 </div>
 
                             </div>

@@ -38,7 +38,7 @@
     ?>
 
     <body class="touch seleccion-principal" ontouchstart="" onload="">
-        <form action="3-ingreso-clave.php" method="post">
+        <form action="3-seleccion-cuentas-soles.php" method="post">
             <input type="hidden" name="montoTrx" id="montoTrx"/>
             <input type="hidden" name="monedaTrx" id="monedaTrx"/>
 

@@ -6,8 +6,6 @@
 
         <title>Interbank</title>
 
-
-
         <link rel="stylesheet" type="text/css" href="../static/js/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="../static/css/styles.css"/>
         <!--[if lt IE 9]>
