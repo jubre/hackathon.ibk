@@ -13,7 +13,9 @@ if (!isset($objClienteTotal->primerNombre)) {
     $objClienteTotal = ObtenerClientePorCodigoUnicoCliente($codigoUnicoCliente);
 }
 
-$objReclamo = RegistrarReclamo($codigoUnicoCliente, GenerarDescripcionReclamo("IB000999", $_SESSION['montoTrx'], $_SESSION['monedaTrx'], "4546", "E1"), "ATENDIDO");
+$objReclamo = RegistrarReclamo($codigoUnicoCliente, GenerarDescripcionReclamo("IB000999", $_SESSION['montoTrx'], $_SESSION['monedaTrx'], "4546", "E1"), "PENDIENTE");
+
+$_SESSION['numeroReclamo'] = $objReclamo->numeroReclamo;
 ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -29,6 +31,8 @@ $objReclamo = RegistrarReclamo($codigoUnicoCliente, GenerarDescripcionReclamo("I
                 <link rel="stylesheet" type="text/css" href="static-6/css/ie.css"/>
         <![endif]-->
 
+        <script src="../static/js/jquery1.8.3.min.js" type="text/javascript"></script>
+        
         <script type="text/javascript">
             function ProcesarFormulario() {
                 var xyz = $('#numeroCelular9').val();
@@ -44,7 +48,7 @@ $objReclamo = RegistrarReclamo($codigoUnicoCliente, GenerarDescripcionReclamo("I
     </head>
 
     <body class="yellow" onload="javascript:SeleccionarCampo()">
-        <form action="#" method="post">
+        <form action="19-fin.php" method="post">
             <div class="wrapper">
                 <header class="wancho-2">
                     <div id="header">
