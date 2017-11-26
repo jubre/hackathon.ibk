@@ -5,7 +5,7 @@ include 'model/jsonPOST.php';
 include 'model/jsonGET.php';
 include 'model/util.php';
 
-$codigoUnicoCliente = "00".$_SESSION["numeroDocumento"];
+$codigoUnicoCliente = "00" . $_SESSION["numeroDocumento"];
 $objClienteTotal = ObtenerClientePorCodigoUnicoCliente($codigoUnicoCliente);
 $objReclamo = ObtenerReclamoPorCodigoUnicoCliente($codigoUnicoCliente);
 
@@ -63,7 +63,7 @@ if (ValidarFechaReclamos($objReclamo) == "No") {
 
                 <section class="c-main wancho-2">
 
-                    <div class="c-texto1 text-error -solo mt200">
+                    <div class="c-texto1 text-error -solo mt100">
                         <span></span>
                         <p class="vm">
                             <?php
@@ -72,9 +72,9 @@ if (ValidarFechaReclamos($objReclamo) == "No") {
                                 ?>
                                 Hola <strong><?php echo $objClienteTotal->primerNombre; ?></strong>,<br/>
                                 Lo sentimos, se presentó un problema al realizar el retiro solicitado.<br/>
-                                Se procedió con la creación del reclamo: <strong><?php echo $objReclamo->numeroReclamo;?></strong>, el cual se atenderá en los próximos dias.<br/>
+                                Se procedió con la creación del reclamo: <strong><?php echo $objReclamo->numeroReclamo; ?></strong>, el cual se atenderá en los próximos dias.<br/>
                                 Disculpe por el inconveniente.<br/>
-                            <?php
+                                <?php
                             }
                             if ($escenario == 2) {
                                 $mensaje = "Hola " . $objClienteTotal->primerNombre . " Lo sentimos, se presentó un problema al realizar el retiro solicitado. Para evitar cualquier malestar, se procedio con la devolución de " . $_SESSION["montoTrx"] . " " . $_SESSION["monedaTrx"] . " a tu cuenta: " . $objCuenta[0]->numeroCuenta . ". Disculpe por el inconveniente";
@@ -86,12 +86,32 @@ if (ValidarFechaReclamos($objReclamo) == "No") {
                                 Disculpe por el inconveniente.<br/>
                                 <?php
                             }
-                            
+
                             EnviarCorreo($mensaje, $objClienteTotal->email);
                             ?>
                         </p>
                     </div>
 
+                    <div class="c-texto1 -solo mt10 fz20">
+                        <p class="vm">
+                            Puedes acerca a algunas de las siguientes Tiendas más cercanas a tí.<br/><br/>
+                            <?php
+                            $str = explode(",", ObtenerCoordenadasGPS("Carlos Villaran 140 La Victoria Lima"));
+                            $listTiendas = ObtenerTiendas($str[0], $str[1]);
+                            $i = 1;
+
+                            foreach ($listTiendas as $objTienda) {
+                                $i++;
+                                echo $objTienda->zona . "<br/>";
+                                echo $objTienda->direccion . " " . $objTienda->distrito . "<br/>";
+                                echo $objTienda->horario . "<br/><br/>";
+                                if ($i > 2) {
+                                    return "listo";
+                                }
+                            }
+                            ?>
+                        </p>
+                    </div>
                 </section>
 
             </div>

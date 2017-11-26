@@ -25,7 +25,7 @@ function GenerarDescripcionReclamo($codigoATM, $montoTrx, $monedaTrx, $codigoOpe
     return $codigoATM . " - " . $montoTrx . " " . $monedaTrx . " - " . $codigoOperacionATM . " - " . $tipoErrorATM;
 }
 
-function EnviarCorreo($textoCorreo,$destinatario) {
+function EnviarCorreo($textoCorreo, $destinatario) {
     $curl = curl_init();
 
     curl_setopt_array($curl, array(
@@ -36,7 +36,7 @@ function EnviarCorreo($textoCorreo,$destinatario) {
         CURLOPT_TIMEOUT => 30,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => "POST",
-        CURLOPT_POSTFIELDS => "{\"usuarioId\":\"JR\",\"accion\":\"E\",\"operador\":\"C\",\"nroCelular\":\"950201190\",\"email\":\"".$destinatario."\",\"canal\":\"bot\",\"messageId\":\"JR_UAT_20171016003\",\"clave\":\"20171016003\",\"parametros\":[{\"key\":\"Operacion\",\"value\":\"".$textoCorreo."\"}]}",
+        CURLOPT_POSTFIELDS => "{\"usuarioId\":\"JR\",\"accion\":\"E\",\"operador\":\"C\",\"nroCelular\":\"950201190\",\"email\":\"" . $destinatario . "\",\"canal\":\"bot\",\"messageId\":\"JR_UAT_20171016003\",\"clave\":\"20171016003\",\"parametros\":[{\"key\":\"Operacion\",\"value\":\"" . $textoCorreo . "\"}]}",
         CURLOPT_HTTPHEADER => array(
             "accept: application/json",
             "content-type: application/json",
@@ -58,7 +58,7 @@ function EnviarCorreo($textoCorreo,$destinatario) {
     return $objCorreo;
 }
 
-function EnviarSMS($textoSMS,$numeroCelular) {
+function EnviarSMS($textoSMS, $numeroCelular) {
     $curl = curl_init();
 
     curl_setopt_array($curl, array(
@@ -69,7 +69,7 @@ function EnviarSMS($textoSMS,$numeroCelular) {
         CURLOPT_TIMEOUT => 30,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => "POST",
-        CURLOPT_POSTFIELDS => "{\"usuarioId\":\"JR\",\"accion\":\"E\",\"operador\":\"C\",\"nroCelular\":\"".$numeroCelular."\",\"email\":\"prueba@prueba.com\",\"canal\":\"bot\",\"messageId\":\"JR_UAT_20171016003\",\"clave\":\"20171016003\",\"parametros\":[{\"key\":\"Operacion\",\"value\":\"".$textoSMS."\"}]}",
+        CURLOPT_POSTFIELDS => "{\"usuarioId\":\"JR\",\"accion\":\"E\",\"operador\":\"C\",\"nroCelular\":\"" . $numeroCelular . "\",\"email\":\"prueba@prueba.com\",\"canal\":\"bot\",\"messageId\":\"JR_UAT_20171016003\",\"clave\":\"20171016003\",\"parametros\":[{\"key\":\"Operacion\",\"value\":\"" . $textoSMS . "\"}]}",
         CURLOPT_HTTPHEADER => array(
             "accept: application/json",
             "content-type: application/json",
@@ -89,6 +89,15 @@ function EnviarSMS($textoSMS,$numeroCelular) {
     }
 
     return $objCorreo;
+}
+
+function ObtenerCoordenadasGPS($direccion) {
+    $direccion = urlencode($direccion);
+    $geocode = file_get_contents('http://maps.google.com/maps/api/geocode/json?address=' . $direccion . '&sensor=false');
+    $output = json_decode($geocode);
+    $lat = $output->results[0]->geometry->location->lat;
+    $long = $output->results[0]->geometry->location->lng;
+    return $lat . ',' . $long;
 }
 
 ?>

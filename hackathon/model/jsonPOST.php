@@ -112,7 +112,7 @@ function RegistrarCuenta($codigoUnicoCliente) {
         CURLOPT_TIMEOUT => 30,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => "POST",
-        CURLOPT_POSTFIELDS => "{\"codigoUnicoCliente\":\"".$codigoUnicoCliente."\",\"producto\":\"002\",\"sProducto\":\"205\",\"moneda\":\"001\",\"tasaAnual\":\"110.87\"}",
+        CURLOPT_POSTFIELDS => "{\"codigoUnicoCliente\":\"" . $codigoUnicoCliente . "\",\"producto\":\"002\",\"sProducto\":\"205\",\"moneda\":\"001\",\"tasaAnual\":\"110.87\"}",
         CURLOPT_HTTPHEADER => array(
             "accept: application/json",
             "content-type: application/json",
@@ -132,6 +132,39 @@ function RegistrarCuenta($codigoUnicoCliente) {
     }
 
     return $objCuenta;
+}
+
+function ObtenerTiendas($latitud,$longitud) {
+    $curl = curl_init();
+
+    curl_setopt_array($curl, array(
+        CURLOPT_URL => "https://api.us.apiconnect.ibmcloud.com/interbankperu-uat/pys-servicios-internos/ms/ubicacionhorario",
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => "",
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 30,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => "POST",
+        CURLOPT_POSTFIELDS => "{\"operation\":2,\"zona\":\"\",\"provincia\":\"\",\"direccion\":\"\",\"distrito\":\"m\",\"instante\":\"\",\"dia\":\"\",\"latitud\":".$latitud.",\"longitud\":".$longitud."}",
+        CURLOPT_HTTPHEADER => array(
+            "accept: application/json",
+            "content-type: application/json",
+            "x-ibm-client-id: 1387b541-cb35-4511-940a-3a095567b7a3 "
+        ),
+    ));
+
+    $response = curl_exec($curl);
+    $err = curl_error($curl);
+
+    curl_close($curl);
+
+    if ($err) {
+        echo "cURL Error #:" . $err;
+    } else {
+        $objTienda = json_decode($response);
+    }
+
+    return $objTienda;
 }
 
 ?>
