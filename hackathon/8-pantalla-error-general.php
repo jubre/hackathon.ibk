@@ -68,24 +68,22 @@ if (ValidarFechaReclamos($objReclamo) == "No") {
                         <p class="vm">
                             <?php
                             if (($escenario == 1) OR ( $escenario == 3)) {
-                                $mensaje = "Hola Juan. Lo sentimos, tuvimos problemas en atender el retiro solicitado. Hemos procedido con crear el reclamo " . $objReclamo->numeroReclamo . " que se atendera en los próximos dias. Disculpa  el inconveniente. Estamos para servirte.";
+                                $mensaje = "Hola " . $objClienteTotal->primerNombre . " Lo sentimos, se presentó un problema al realizar el retiro solicitado. Se procedió con la creación del reclamo: " . $objReclamo->numeroReclamo . " , el cual se atenderá en los próximos dias. Disculpe por el inconveniente.";
                                 ?>
-                                Hola <strong><?php echo $objClienteTotal->primerNombre; ?></strong><br/>
-                                Lo sentimos, tuvimos problemas en atender el retiro solicitado.<br/>
-                                Hemos procedido con crear el reclamo <?php echo $objReclamo->numeroReclamo;?> que se atendera en los próximos dias.<br/>
-                                Disculpa  el inconveniente.<br/>
-                                Estamos para servirte
+                                Hola <strong><?php echo $objClienteTotal->primerNombre; ?></strong>,<br/>
+                                Lo sentimos, se presentó un problema al realizar el retiro solicitado.<br/>
+                                Se procedió con la creación del reclamo: <strong><?php echo $objReclamo->numeroReclamo;?></strong>, el cual se atenderá en los próximos dias.<br/>
+                                Disculpe por el inconveniente.<br/>
                             <?php
                             }
                             if ($escenario == 2) {
-                                $mensaje = "Hola " . $objClienteTotal->primerNombre . "Lo sentimos, tuvimos problemas en atender el retiro soliciado. Para evitar cualquier malestar, se procedio con la devolución de " . $_SESSION["montoTrx"] . " " . $_SESSION["monedaTrx"] . " a su cuenta " . $objCuenta[0]->numeroCuenta . ". Disculpe el inconveniente. Estamos para servirte";
+                                $mensaje = "Hola " . $objClienteTotal->primerNombre . " Lo sentimos, se presentó un problema al realizar el retiro solicitado. Para evitar cualquier malestar, se procedio con la devolución de " . $_SESSION["montoTrx"] . " " . $_SESSION["monedaTrx"] . " a tu cuenta: " . $objCuenta[0]->numeroCuenta . ". Disculpe por el inconveniente";
                                 ?>
-                                Hola <strong><?php echo $objClienteTotal->primerNombre; ?></strong><br/>
-                                Lo sentimos, tuvimos problemas en atender el retiro solicitado.<br/>
-                                Para evitar cualquier malestar, se procedio con la devolución de <br/>
-                                <?php echo $_SESSION["montoTrx"] . " " . $_SESSION["monedaTrx"] . " a su cuenta " . $objCuenta[0]->numeroCuenta; ?><br/>
-                                Disculpe el inconveniente.<br/>
-                                Estamos para servirte
+                                Hola <strong><?php echo $objClienteTotal->primerNombre; ?></strong>,<br/>
+                                Lo sentimos, se presentó un problema al realizar el retiro solicitado.<br/>
+                                Para evitar cualquier malestar, se procedió con la devolución de <br/>
+                                <strong><?php echo $_SESSION["montoTrx"] . " " . $_SESSION["monedaTrx"] . " a tu cuenta: " . $objCuenta[0]->numeroCuenta; ?></strong><br/>
+                                Disculpe por el inconveniente.<br/>
                                 <?php
                             }
                             
