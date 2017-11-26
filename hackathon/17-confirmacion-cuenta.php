@@ -42,7 +42,7 @@ $objReclamo = RegistrarReclamo($codigoUnicoCliente, GenerarDescripcionReclamo("I
                 <div class="ac mt20 txtnormal size32 ml30 mr30">
                     <br/>
                     Lo sentimos, tuvimos problemas en atender el retiro solicitado.<br/>
-                    Para evitar cualquier malestar, se procedio con la devolución de <br/>
+                    Para evitar cualquier malestar, se procedió con la devolución de <br/>
                     <?php echo $_SESSION["montoTrx"] . " " . $_SESSION["monedaTrx"] . " a su cuenta "; ?><br/>
                 </div>
                 <div class="ac mt40">
@@ -59,7 +59,7 @@ $objReclamo = RegistrarReclamo($codigoUnicoCliente, GenerarDescripcionReclamo("I
                     </form>
                 </div>
                 <div class="ac mt20 txtnormal size32 ml30 mr30">
-                    Disculpe el inconveniente. Acercate a cualquier tienda Interbank<br> 					
+                    Disculpe el inconveniente. Acércate a cualquier tienda Interbank<br> 					
                 </div>
             </section>
         </div>

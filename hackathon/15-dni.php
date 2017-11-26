@@ -36,7 +36,7 @@
                 </header>
                 <section class="wancho-2">
                     <div class="ac mt20 txtnormal size50">
-                        Lo sentimos, se presento un problema en atender el retiro solicitado.	
+                        Lo sentimos, se presentó un problema en atender el retiro solicitado.	
                     </div>
                     <div class="ac mt40">
                         <div class="txtnormal size35 skyblue mb15">

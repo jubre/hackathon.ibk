@@ -167,9 +167,9 @@
                                                     S/ &nbsp; 400                                                
                                                 </div>
                                             </a>
-                                            <a href="#ibcontent-1" class="text-fancy bt ac b-sl">
+                                            <!--<a href="#ibcontent-1" class="text-fancy bt ac b-sl">
                                                 <div class="bt-inner">Otro monto en soles</div>
-                                            </a>
+                                            </a>-->
                                         </div>
                                         <div id="tab-dolares" class="content-billete dolares item-tab">
                                             <input type="hidden" value="20" id="monto20" name="monto20"/>
@@ -208,9 +208,9 @@
                                                     US$ &nbsp; 200
                                                 </div>
                                             </a>
-                                            <a href="#ibcontent-2" class="text-fancy bt ac b-sl">
+                                            <!--<a href="#ibcontent-2" class="text-fancy bt ac b-sl">
                                                 <div class="bt-inner">Otro monto en dólares</div>
-                                            </a>
+                                            </a>-->
                                         </div>
                                     </div>
                                 </div>

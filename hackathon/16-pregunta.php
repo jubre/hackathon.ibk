@@ -29,7 +29,7 @@ $_SESSION['numeroDocumento'] = $numeroDocumento;
                 <div class="ac mt20 txtnormal size50">
                     <br/><br>
                     ¿Deseas crear una cuenta<br/>
-                    para realizar al abono de los <?php echo $_SESSION['montoTrx'] . " " . $_SESSION['monedaTrx'] ;?><br/><br/><br> 					
+                    para realizar al abono de los <?php echo $_SESSION['montoTrx'] . " " . $_SESSION['monedaTrx'] ;?>?<br/><br/><br> 					
                 </div>
                 <div class="ac mt40">
                     <form> 

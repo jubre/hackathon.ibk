@@ -3,29 +3,22 @@ include 'model/jsonPOST.php';
 include 'model/jsonGET.php';
 include 'model/util.php';
 
-$codigoUnicoCliente = "00" . $_SESSION["numeroDocumento"];
+$codigoUnicoCliente = "00" . $_POST["numeroDocumento"];
 $objClienteTotal = ObtenerClientePorCodigoUnicoCliente($codigoUnicoCliente);
-
-if (!isset($objClienteTotal->primerNombre)) {
-    $objClienteTotal = RegistrarCliente($_SESSION["numeroDocumento"]);
-    $objClienteTotal = ObtenerClientePorCodigoUnicoCliente($codigoUnicoCliente);
-}
-
-$objReclamo = RegistrarReclamo($codigoUnicoCliente, GenerarDescripcionReclamo("IB000999", $_SESSION['montoTrx'], $_SESSION['monedaTrx'], "4546", "E1"), "PENDIENTE");
 ?>
 
 <html>
     <body>
-        <table border="0">
+        <table border="0" cellpadding="5">
             <tr>
-                <td>Datos del Cliente</td>
+                <td bgcolor="#008000" colspan="2" align="center"><font color="white">Datos del Cliente</font></td>
             </tr>
             <tr>
                 <td>
                     Número de Documento
                 </td>
                 <td>
-
+                    <?php echo $objClienteTotal->numeroDocumento; ?>
                 </td>
             </tr>
             <tr>
@@ -33,7 +26,7 @@ $objReclamo = RegistrarReclamo($codigoUnicoCliente, GenerarDescripcionReclamo("I
                     Codigo Unico Cliente
                 </td>
                 <td>
-
+                    <?php echo $codigoUnicoCliente; ?>
                 </td>
             </tr>
             <tr>
@@ -41,7 +34,7 @@ $objReclamo = RegistrarReclamo($codigoUnicoCliente, GenerarDescripcionReclamo("I
                     Nombre Completo
                 </td>
                 <td>
-
+                    <?php echo $objClienteTotal->primerNombre . " " . $objClienteTotal->apellidoPaterno; ?>
                 </td>
             </tr>
             <tr>
@@ -49,7 +42,7 @@ $objReclamo = RegistrarReclamo($codigoUnicoCliente, GenerarDescripcionReclamo("I
                     Correo Electronico
                 </td>
                 <td>
-
+                    <?php echo $objClienteTotal->email; ?>
                 </td>
             </tr>
         </table>
